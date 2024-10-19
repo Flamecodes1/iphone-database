@@ -17,3 +17,45 @@
     <script src="script.js"></script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iPhone Database - Anmelden / Registrieren</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Willkommen zur iPhone-Datenbank!</h1>
+
+    <!-- Registrierungsformular -->
+    <div id="register-section">
+        <h2>Registrieren</h2>
+        <form id="register-form">
+            <input type="text" id="register-username" placeholder="Benutzername" required>
+            <input type="password" id="register-password" placeholder="Passwort" required>
+            <button type="submit">Registrieren</button>
+        </form>
+        <p>Hast du bereits ein Konto? <a href="#" onclick="showLogin()">Hier anmelden</a></p>
+    </div>
+
+    <!-- Anmeldeformular -->
+    <div id="login-section" style="display: none;">
+        <h2>Anmelden</h2>
+        <form id="login-form">
+            <input type="text" id="login-username" placeholder="Benutzername" required>
+            <input type="password" id="login-password" placeholder="Passwort" required>
+            <button type="submit">Anmelden</button>
+        </form>
+        <p>Noch kein Konto? <a href="#" onclick="showRegister()">Hier registrieren</a></p>
+    </div>
+
+    <!-- Bereich nach erfolgreicher Anmeldung -->
+    <div id="welcome-section" style="display: none;">
+        <h2>Willkommen, <span id="user-name"></span>!</h2>
+        <button onclick="logout()">Abmelden</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
