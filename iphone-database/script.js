@@ -1,7 +1,7 @@
 const iphoneData = [
     {
         model: 'iPhone 15 Pro Max',
-        image: 'https://example.com/iphone15promax.jpg',
+        image: 'https://cdn.discordapp.com/attachments/1276995131748388974/1297248517693378672/fqs_2024-10-19_191721.534.jpg?ex=67153c54&is=6713ead4&hm=92cce47c737411933b63b29099e9d7580e936c659e83f3537d2360ab76b6fbd4&/',
         releaseDate: 'September 2023',
         display: '6.7-inch Super Retina XDR',
         camera: 'Triple 48MP + 12MP + 12MP cameras',
