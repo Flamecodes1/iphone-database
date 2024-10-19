@@ -100,3 +100,60 @@ iphoneData.forEach(iphone => {
 
     iphoneList.appendChild(card);
 });
+// Registrierung
+document.getElementById('register-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('register-username').value;
+    const password = document.getElementById('register-password').value;
+
+    // Speichern im Local Storage
+    if (username && password) {
+        localStorage.setItem('username', username);
+        localStorage.setItem('password', password);
+        alert('Registrierung erfolgreich! Du kannst dich jetzt anmelden.');
+        showLogin();
+    } else {
+        alert('Bitte alle Felder ausfüllen.');
+    }
+});
+
+// Anmeldung
+document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const username = document.getElementById('login-username').value;
+    const password = document.getElementById('login-password').value;
+
+    // Überprüfen der gespeicherten Daten
+    const storedUsername = localStorage.getItem('username');
+    const storedPassword = localStorage.getItem('password');
+
+    if (username === storedUsername && password === storedPassword) {
+        alert('Anmeldung erfolgreich!');
+        showWelcome(username);
+    } else {
+        alert('Falscher Benutzername oder Passwort.');
+    }
+});
+
+// Anzeigefunktionen
+function showLogin() {
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('login-section').style.display = 'block';
+}
+
+function showRegister() {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'block';
+}
+
+function showWelcome(username) {
+    document.getElementById('login-section').style.display = 'none';
+    document.getElementById('register-section').style.display = 'none';
+    document.getElementById('welcome-section').style.display = 'block';
+    document.getElementById('user-name').textContent = username;
+}
+
+function logout() {
+    document.getElementById('welcome-section').style.display = 'none';
+    showLogin();
+}
